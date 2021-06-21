@@ -21,15 +21,19 @@ class DataSet(object):
     def getData(self, fileName):
         print("Loading %s data set..."%(fileName))
         data = []
-        filePath = './Data/'+fileName+'/ratings.dat'
+        # filePath = './Data/'+fileName+'/ratings.dat'
+        # 指定ratings文件名
+        filePath = './Data/'+fileName+'/ratings.csv'
         u = 0
         i = 0
         maxr = 0.0
         with open(filePath, 'r') as f:
             for line in f:
                 if line:
-                    lines = line.split("\t")
-                    user = int(lines[0])
+                    # lines = line.split("\t")
+                    lines = line.split(",")
+                    # user = int(lines[0])
+                    user = int(hash(lines[0]))
                     movie = int(lines[1])
                     score = float(lines[2])
                     data.append((user, movie, score, 0))

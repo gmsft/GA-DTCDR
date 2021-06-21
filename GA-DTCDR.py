@@ -5,7 +5,9 @@ Function Description: Make dual-target cross-domain recommendations (DTCDR) by u
 Paper: A Graphical and Attentional Framework for Dual-Target Cross-Domain Recommendation (IJCAI 2020)
 @author: Feng Zhu
 """
-import tensorflow as tf
+# import tensorflow as tf
+import tensorflow.compat.v1 as tf
+tf.disable_v2_behavior()
 import numpy as np
 import argparse
 from DataSet import DataSet
